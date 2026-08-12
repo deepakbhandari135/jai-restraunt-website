@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jai Restaurant | Restaurant in Rohtak</title>
+<meta name="description" content="Jai Restaurant in Company Bagh, Rohtak — delicious food, a warm atmosphere and memorable dining. View our menu, book a table, or reach us on WhatsApp." />
+<meta name="theme-color" content="#1B1512" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="restaurant.restaurant" />
+<meta property="og:title" content="Jai Restaurant | Restaurant in Rohtak" />
+<meta property="og:description" content="Delicious food. Memorable moments. Book a table at Jai Restaurant, Company Bagh, Rohtak." />
+<meta property="og:locale" content="en_IN" />
+
+<!-- Structured data: only verified info is included -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Jai Restaurant",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Company Bagh",
+    "addressLocality": "Rohtak",
+    "addressRegion": "Haryana",
+    "postalCode": "124001",
+    "addressCountry": "IN"
+  },
+  "telephone": "+917404293628"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --charcoal:#1B1512;
+    --charcoal-2:#241C17;
+    --charcoal-3:#2E241D;
+    --gold:#C9974A;
+    --gold-light:#E3C287;
+    --cream:#F7F1E6;
+    --cream-2:#FBF7EF;
+    --ember:#B3492A;
+    --ember-light:#D5714D;
+    --ink:#1B1512;
+    --line: rgba(201,151,74,0.28);
+    --shadow: 0 20px 50px -20px rgba(27,21,18,0.45);
+    --radius-lg: 22px;
+    --radius-md: 14px;
+    --ease: cubic-bezier(.22,1,.36,1);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Work Sans', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  button{font-family:inherit; cursor:pointer;}
+  h1,h2,h3{font-family:'Fraunces', serif; font-weight:600; letter-spacing:-0.01em;}
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--gold);
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:22px; height:1px; background:var(--gold);}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+  :focus-visible{outline:2px solid var(--ember); outline-offset:3px;}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:15px 30px; border-radius:100px; font-weight:600; font-size:0.95rem;
+    border:1px solid transparent; transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .3s;
+    white-space:nowrap;
+  }
+  .btn-primary{background:var(--gold); color:var(--charcoal);}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 14px 30px -10px rgba(201,151,74,0.55);}
+  .btn-ghost{border-color:rgba(247,241,230,0.35); color:var(--cream);}
+  .btn-ghost:hover{background:rgba(247,241,230,0.08); transform:translateY(-2px);}
+  .btn-dark{background:var(--charcoal); color:var(--cream);}
+  .btn-dark:hover{transform:translateY(-2px); box-shadow:0 14px 30px -10px rgba(27,21,18,0.4);}
+  .btn-block{width:100%;}
+  .btn:disabled{opacity:0.6; cursor:not-allowed; transform:none !important;}
+
+  /* ---------- Nav ---------- */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(27,21,18,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(201,151,74,0.18);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px;
+  }
+  .brand{
+    font-family:'Fraunces', serif; font-weight:600; font-size:1.35rem; color:var(--cream);
+    display:flex; align-items:center; gap:10px;
+  }
+  .brand .mark{
+    width:34px; height:34px; border-radius:50%;
+    background:conic-gradient(from 210deg, var(--gold), var(--ember), var(--gold));
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces', serif; color:var(--charcoal); font-size:1rem; font-weight:700;
+  }
+  .nav-links{display:flex; align-items:center; gap:34px;}
+  .nav-links a{
+    color:rgba(247,241,230,0.82); font-size:0.92rem; font-weight:500;
+    position:relative; padding:4px 0;
+  }
+  .nav-links a::after{
+    content:""; position:absolute; left:0; bottom:-2px; width:0; height:1px; background:var(--gold);
+    transition:width .3s var(--ease);
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{display:flex; align-items:center; gap:14px;}
+  .hamburger{
+    display:none; flex-direction:column; gap:5px; background:none; border:none; padding:8px;
+  }
+  .hamburger span{width:22px; height:2px; background:var(--cream); transition:.3s;}
+  .mobile-menu{
+    display:none; flex-direction:column; gap:2px; background:var(--charcoal-2);
+    border-top:1px solid rgba(201,151,74,0.18);
+  }
+  .mobile-menu a{
+    color:var(--cream); padding:16px 24px; border-bottom:1px solid rgba(201,151,74,0.08); font-weight:500;
+  }
+  .mobile-menu.open{display:flex;}
+  @media (max-width:880px){
+    .nav-links{display:none;}
+    .nav-cta .btn-ghost{display:none;}
+    .hamburger{display:flex;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative; min-height:92vh; display:flex; align-items:center;
+    background:
+      radial-gradient(120% 90% at 85% 8%, rgba(179,73,42,0.35), transparent 55%),
+      linear-gradient(180deg, rgba(27,21,18,0.55), rgba(27,21,18,0.88)),
+      url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1974&auto=format&fit=crop') center/cover no-repeat;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:""; position:absolute; inset:0;
+    background-image: radial-gradient(circle, rgba(201,151,74,0.5) 1px, transparent 1px);
+    background-size: 26px 26px;
+    opacity:0.12; pointer-events:none;
+  }
+  .hero-inner{position:relative; z-index:2; padding:140px 24px 100px;}
+  .hero-tag{color:var(--gold-light);}
+  .hero h1{
+    font-size:clamp(3rem, 8vw, 6rem); color:var(--cream); margin-top:22px; line-height:0.98;
+  }
+  .hero .script{
+    display:block; font-style:italic; font-weight:300; color:var(--gold-light);
+    font-size:clamp(1.4rem, 3vw, 2rem); margin-top:14px;
+  }
+  .hero p.lede{
+    max-width:520px; margin-top:26px; color:rgba(247,241,230,0.8); font-size:1.08rem;
+  }
+  .hero-ctas{display:flex; gap:16px; margin-top:40px; flex-wrap:wrap;}
+  .hero-meta{
+    margin-top:64px; display:flex; gap:40px; flex-wrap:wrap;
+    padding-top:28px; border-top:1px solid rgba(247,241,230,0.15);
+    max-width:640px;
+  }
+  .hero-meta div{display:flex; flex-direction:column; gap:4px;}
+  .hero-meta span.label{font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold);}
+  .hero-meta span.val{color:var(--cream); font-weight:500;}
+  @keyframes floatUp{
+    from{opacity:0; transform:translateY(22px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  .hero-inner > *{animation:floatUp .9s var(--ease) both;}
+  .hero-inner > *:nth-child(2){animation-delay:.08s;}
+  .hero-inner > *:nth-child(3){animation-delay:.16s;}
+  .hero-inner > *:nth-child(4){animation-delay:.24s;}
+  .hero-inner > *:nth-child(5){animation-delay:.32s;}
+
+  /* ---------- Divider (signature motif) ---------- */
+  .divider{
+    display:flex; align-items:center; justify-content:center; gap:10px; padding:14px 0;
+  }
+  .divider .ring{
+    width:9px; height:9px; border-radius:50%; border:1.5px solid var(--gold);
+  }
+  .divider .ring.filled{background:var(--gold);}
+  .divider .bar{width:60px; height:1px; background:linear-gradient(90deg, transparent, var(--gold), transparent);}
+
+  /* ---------- Sections generic ---------- */
+  section{padding:110px 0;}
+  .section-head{max-width:640px; margin-bottom:56px;}
+  .section-head.center{margin-left:auto; margin-right:auto; text-align:center;}
+  .section-head h2{font-size:clamp(2.2rem, 4.4vw, 3rem); margin-top:16px;}
+  .section-head p{margin-top:16px; color:rgba(27,21,18,0.68); font-size:1.05rem;}
+  .dark-section{background:var(--charcoal); color:var(--cream);}
+  .dark-section .section-head p{color:rgba(247,241,230,0.68);}
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .8s var(--ease), transform .8s var(--ease);}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ---------- About ---------- */
+  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;}
+  .about-media{position:relative; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow);}
+  .about-media img{aspect-ratio:4/5; object-fit:cover; width:100%;}
+  .about-copy p{color:rgba(27,21,18,0.72); margin-top:18px; font-size:1.05rem;}
+  .about-facts{display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-top:36px;}
+  .about-facts .fact{
+    background:var(--cream-2); border:1px solid var(--line); border-radius:var(--radius-md); padding:20px;
+  }
+  .about-facts .fact .n{font-family:'Fraunces',serif; font-size:1.6rem; color:var(--ember);}
+  .about-facts .fact .l{font-size:0.82rem; color:rgba(27,21,18,0.6); margin-top:4px;}
+  @media (max-width:900px){.about-grid{grid-template-columns:1fr;}}
+
+  /* ---------- Menu ---------- */
+  .filters{display:flex; gap:10px; justify-content:center; margin-bottom:48px; flex-wrap:wrap;}
+  .filter-btn{
+    padding:10px 22px; border-radius:100px; border:1px solid rgba(247,241,230,0.25);
+    background:transparent; color:rgba(247,241,230,0.75); font-weight:500; font-size:0.9rem;
+    transition:.3s;
+  }
+  .filter-btn.active, .filter-btn:hover{background:var(--gold); color:var(--charcoal); border-color:var(--gold);}
+  .menu-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:26px;}
+  @media (max-width:960px){.menu-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:640px){.menu-grid{grid-template-columns:1fr;}}
+  .menu-card{
+    background:var(--charcoal-2); border:1px solid rgba(201,151,74,0.14); border-radius:var(--radius-lg);
+    overflow:hidden; transition:transform .4s var(--ease), box-shadow .4s var(--ease);
+  }
+  .menu-card:hover{transform:translateY(-6px); box-shadow:0 24px 50px -20px rgba(0,0,0,0.5);}
+  .menu-card .thumb{position:relative; height:190px; overflow:hidden;}
+  .menu-card .thumb img{width:100%; height:100%; object-fit:cover; transition:transform .6s var(--ease);}
+  .menu-card:hover .thumb img{transform:scale(1.08);}
+  .veg-dot{
+    position:absolute; top:14px; left:14px; width:22px; height:22px; border-radius:4px;
+    background:rgba(27,21,18,0.75); display:flex; align-items:center; justify-content:center; padding:3px;
+    backdrop-filter:blur(4px);
+  }
+  .veg-dot i{width:100%; height:100%; border-radius:50%;}
+  .veg-dot.veg i{background:#4CAF6D;}
+  .veg-dot.nonveg i{background:#C1440E;}
+  .sample-flag{
+    position:absolute; top:14px; right:14px; background:rgba(201,151,74,0.92); color:var(--charcoal);
+    font-family:'JetBrains Mono',monospace; font-size:0.62rem; letter-spacing:0.06em; text-transform:uppercase;
+    padding:4px 8px; border-radius:6px; font-weight:600;
+  }
+  .menu-card .body{padding:22px;}
+  .menu-card .row{display:flex; justify-content:space-between; align-items:baseline; gap:12px;}
+  .menu-card h3{font-size:1.15rem; color:var(--cream);}
+  .menu-card .price{font-family:'JetBrains Mono',monospace; color:var(--gold-light); font-weight:500;}
+  .menu-card p{margin-top:8px; font-size:0.9rem; color:rgba(247,241,230,0.6);}
+  .menu-note{
+    text-align:center; margin-top:44px; font-size:0.88rem; color:rgba(247,241,230,0.55);
+    max-width:560px; margin-left:auto; margin-right:auto;
+  }
+
+  /* ---------- Booking ---------- */
+  .booking-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; align-items:flex-start;}
+  @media (max-width:960px){.booking-grid{grid-template-columns:1fr;}}
+  .booking-side{position:sticky; top:110px;}
+  .steps{list-style:none; margin-top:26px; display:flex; flex-direction:column; gap:18px;}
+  .steps li{display:flex; gap:14px; align-items:flex-start;}
+  .steps .num{
+    width:30px; height:30px; border-radius:50%; border:1px solid var(--gold); color:var(--gold);
+    display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace;
+    font-size:0.8rem; flex-shrink:0;
+  }
+  .steps strong{display:block; font-size:0.98rem;}
+  .steps span{font-size:0.88rem; color:rgba(27,21,18,0.6);}
+
+  .booking-form{
+    background:var(--cream-2); border:1px solid var(--line); border-radius:var(--radius-lg);
+    padding:38px; box-shadow:var(--shadow);
+  }
+  .form-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .field{display:flex; flex-direction:column; gap:7px; margin-top:20px;}
+  .field.full{grid-column:1/-1;}
+  .field label{font-size:0.82rem; font-weight:600; color:var(--charcoal);}
+  .field label .opt{font-weight:400; color:rgba(27,21,18,0.45); font-size:0.78rem;}
+  .field input, .field select, .field textarea{
+    border:1px solid rgba(27,21,18,0.16); background:#fff; border-radius:10px; padding:12px 14px;
+    font-family:inherit; font-size:0.95rem; color:var(--ink); transition:border-color .2s, box-shadow .2s;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    border-color:var(--gold); box-shadow:0 0 0 3px rgba(201,151,74,0.18); outline:none;
+  }
+  .field textarea{resize:vertical; min-height:88px;}
+  .field.error input, .field.error select, .field.error textarea{border-color:var(--ember);}
+  .err-msg{font-size:0.78rem; color:var(--ember); display:none; min-height:14px;}
+  .field.error .err-msg{display:block;}
+  .char-count{font-size:0.72rem; color:rgba(27,21,18,0.4); text-align:right;}
+  .form-actions{margin-top:28px;}
+  .form-note{font-size:0.78rem; color:rgba(27,21,18,0.5); margin-top:14px; text-align:center;}
+  .spinner{
+    width:16px; height:16px; border-radius:50%; border:2px solid rgba(27,21,18,0.25);
+    border-top-color:var(--charcoal); animation:spin .7s linear infinite; display:none;
+  }
+  .btn.loading .spinner{display:inline-block;}
+  .btn.loading .btn-label{opacity:0.7;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  .confirm-box{
+    display:none; text-align:center; padding:46px 30px;
+  }
+  .confirm-box.show{display:block;}
+  .booking-form.confirmed .form-el{display:none;}
+  .confirm-box .check{
+    width:64px; height:64px; border-radius:50%; background:var(--gold); color:var(--charcoal);
+    display:flex; align-items:center; justify-content:center; margin:0 auto 20px; font-size:1.6rem;
+  }
+  .confirm-box h3{font-size:1.5rem;}
+  .confirm-box p{color:rgba(27,21,18,0.65); margin-top:10px; font-size:0.95rem;}
+  .form-status{
+    font-size:0.85rem; padding:12px 14px; border-radius:10px; margin-top:18px; display:none;
+  }
+  .form-status.show{display:block;}
+  .form-status.error-status{background:rgba(179,73,42,0.1); color:var(--ember); border:1px solid rgba(179,73,42,0.25);}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
+  @media (max-width:900px){.contact-grid{grid-template-columns:1fr;}}
+  .map-embed{border-radius:var(--radius-lg); overflow:hidden; border:1px solid rgba(201,151,74,0.14); height:100%; min-height:340px;}
+  .map-embed iframe{width:100%; height:100%; min-height:340px; border:0; filter:grayscale(0.2) contrast(1.05);}
+  .contact-cards{display:flex; flex-direction:column; gap:16px;}
+  .contact-card{
+    display:flex; align-items:center; gap:16px; padding:20px; border-radius:var(--radius-md);
+    background:var(--charcoal-2); border:1px solid rgba(201,151,74,0.14);
+  }
+  .contact-card .ic{
+    width:44px; height:44px; border-radius:50%; background:rgba(201,151,74,0.12); color:var(--gold);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:1.1rem;
+  }
+  .contact-card h4{font-size:1rem; color:var(--cream); font-family:'Work Sans',sans-serif; font-weight:600;}
+  .contact-card p{font-size:0.86rem; color:rgba(247,241,230,0.6); margin-top:2px;}
+  .contact-card-actions{display:flex; gap:10px; margin-top:8px; flex-wrap:wrap;}
+  .hours-table{margin-top:6px;}
+  .hours-table div{display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px dashed rgba(247,241,230,0.12); font-size:0.88rem;}
+  .hours-table span:first-child{color:rgba(247,241,230,0.55);}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--charcoal); color:rgba(247,241,230,0.75); padding-top:80px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 0.8fr 0.8fr 1fr; gap:40px; padding-bottom:60px; border-bottom:1px solid rgba(247,241,230,0.1);}
+  @media (max-width:820px){.footer-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:520px){.footer-grid{grid-template-columns:1fr;}}
+  .footer-grid h5{font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); margin-bottom:18px;}
+  .footer-grid ul{list-style:none; display:flex; flex-direction:column; gap:11px;}
+  .footer-grid ul a{font-size:0.9rem; color:rgba(247,241,230,0.68);}
+  .footer-grid ul a:hover{color:var(--gold-light);}
+  .footer-brand p{margin-top:14px; font-size:0.9rem; max-width:280px; color:rgba(247,241,230,0.6);}
+  .social-row{display:flex; gap:10px; margin-top:20px;}
+  .social-row a{
+    width:36px; height:36px; border-radius:50%; border:1px solid rgba(247,241,230,0.2);
+    display:flex; align-items:center; justify-content:center; font-size:0.85rem;
+  }
+  .footer-bottom{
+    padding:26px 0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;
+    font-size:0.82rem; color:rgba(247,241,230,0.45);
+  }
+
+  /* ---------- WhatsApp float ---------- */
+  .wa-float{
+    position:fixed; bottom:26px; right:26px; z-index:200;
+    width:60px; height:60px; border-radius:50%; background:#25D366; color:#fff;
+    display:flex; align-items:center; justify-content:center; font-size:1.6rem;
+    box-shadow:0 14px 30px -10px rgba(37,211,102,0.6);
+    animation:pulse 2.6s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(37,211,102,0.45);}
+    70%{box-shadow:0 0 0 16px rgba(37,211,102,0);}
+    100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header>
+  <nav class="nav wrap">
+    <a href="#home" class="brand"><span class="mark">JR</span>Jai Restaurant</a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#booking">Table Booking</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-ghost">Call Us</a>
+      <a href="#booking" class="btn btn-primary">Book a Table</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#booking">Table Booking</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="wrap hero-inner">
+    <div class="eyebrow hero-tag">Company Bagh · Rohtak</div>
+    <h1>Jai Restaurant<span class="script">Delicious Food. Memorable Moments.</span></h1>
+    <p class="lede">A warm, welcoming table in the heart of Rohtak — good food, good company, and a menu made to be shared.</p>
+    <div class="hero-ctas">
+      <a href="#menu" class="btn btn-primary">View Menu</a>
+      <a href="#booking" class="btn btn-ghost">Book a Table</a>
+    </div>
+    <div class="hero-meta">
+      <div><span class="label">Address</span><span class="val">Company Bagh, Rohtak, Haryana – 124001</span></div>
+      <div><span class="label">Phone</span><span class="val">+91 74042 93628</span></div>
+      <div><span class="label">Hours</span><span class="val" id="heroHours">See timings below</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-media reveal">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1974&auto=format&fit=crop" alt="Table set with Indian dishes at Jai Restaurant" loading="lazy" width="800" height="1000" />
+      </div>
+      <div class="about-copy reveal">
+        <div class="eyebrow">About Us</div>
+        <h2>A neighbourhood table, done with care</h2>
+        <p>Jai Restaurant brings together delicious food, a welcoming atmosphere, and memorable dining experiences in the heart of Rohtak. Whether you're stopping by for a quick meal or settling in for a long evening with family and friends, we aim to make every visit feel unhurried and genuine.</p>
+        <p>Our menu is built around dishes people come back for — simple, generous, and made to order. <em>(Restaurant story, and other details will be added here as they're shared.)</em></p>
+        <div class="about-facts">
+          <div class="fact"><div class="n">A–Z</div><div class="l">Starters to Main Course</div></div>
+          <div class="fact"><div class="n">Dine‑in</div><div class="l">Walk‑ins &amp; table booking</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENU ============ -->
+<section class="dark-section" id="menu">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="eyebrow" style="justify-content:center;">Our Menu</div>
+      <h2>Made to share, made to enjoy</h2>
+      <p>A first look at what's on the table. Items and prices below are placeholder samples and will be replaced with the final menu.</p>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="starters">Starters</button>
+      <button class="filter-btn" data-filter="main">Main Course</button>
+    </div>
+
+    <div class="menu-grid" id="menuGrid"></div>
+
+    <p class="menu-note">Menu items, prices and images shown are illustrative placeholders — they'll be swapped for Jai Restaurant's actual dishes and pricing before launch.</p>
+  </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section id="booking">
+  <div class="wrap">
+    <div class="booking-grid">
+      <div class="booking-side reveal">
+        <div class="eyebrow">Table Booking</div>
+        <h2 style="font-size:clamp(2rem,4vw,2.6rem); margin-top:16px;">Reserve your table in a few taps</h2>
+        <p style="margin-top:14px; color:rgba(27,21,18,0.65);">Fill in your details, we'll save your request and open WhatsApp with a ready-made message so we can confirm it with you directly.</p>
+        <ul class="steps">
+          <li><span class="num">1</span><div><strong>Choose date &amp; time</strong><span>Pick when you'd like to visit</span></div></li>
+          <li><span class="num">2</span><div><strong>Enter your details</strong><span>Name, phone and party size</span></div></li>
+          <li><span class="num">3</span><div><strong>Submit</strong><span>We save your request securely</span></div></li>
+          <li><span class="num">4</span><div><strong>Confirm on WhatsApp</strong><span>Send the pre-filled message to finish</span></div></li>
+        </ul>
+      </div>
+
+      <div class="booking-form" id="bookingFormWrap">
+        <form id="bookingForm" novalidate>
+          <div class="form-el">
+          <div class="form-grid">
+            <div class="field full">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" name="fullName" autocomplete="name" placeholder="e.g. Priya Sharma" />
+              <div class="err-msg" id="err-fullName">Please enter your name (min. 2 characters).</div>
+            </div>
+
+            <div class="field">
+              <label for="phone">Mobile Number</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+91 98765 43210" />
+              <div class="err-msg" id="err-phone">Enter a valid 10-digit Indian mobile number.</div>
+            </div>
+
+            <div class="field">
+              <label for="email">Email Address <span class="opt">(optional)</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" />
+              <div class="err-msg" id="err-email">Please enter a valid email address.</div>
+            </div>
+
+            <div class="field">
+              <label for="date">Date</label>
+              <input type="date" id="date" name="date" />
+              <div class="err-msg" id="err-date">Please choose a valid, upcoming date.</div>
+            </div>
+
+            <div class="field">
+              <label for="time">Time</label>
+              <input type="time" id="time" name="time" />
+              <div class="err-msg" id="err-time">Please choose a time.</div>
+            </div>
+
+            <div class="field">
+              <label for="guests">Number of Guests</label>
+              <input type="number" id="guests" name="guests" min="1" max="30" value="2" />
+              <div class="err-msg" id="err-guests">Enter a party size of at least 1.</div>
+            </div>
+
+            <div class="field">
+              <label for="request">Special Request <span class="opt">(optional)</span></label>
+              <input type="text" id="request" name="request" maxlength="200" placeholder="e.g. window table, birthday cake" />
+            </div>
+
+            <div class="field full">
+              <label for="notes">Anything else? <span class="opt">(optional)</span></label>
+              <textarea id="notes" name="notes" maxlength="500" placeholder="Additional notes for the restaurant"></textarea>
+              <div class="char-count"><span id="notesCount">0</span>/500</div>
+            </div>
+          </div>
+
+          <div class="form-status" id="formStatus"></div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+              <span class="spinner"></span>
+              <span class="btn-label">Book a Table &amp; Continue on WhatsApp</span>
+            </button>
+            <p class="form-note">We'll save your request, then open WhatsApp with the details filled in — just hit send there to confirm with our team.</p>
+          </div>
+          </div>
+        </form>
+
+        <div class="confirm-box" id="confirmBox">
+          <div class="check">✓</div>
+          <h3>Request received!</h3>
+          <p>Your table request has been saved. We've opened WhatsApp with your details — please press <strong>Send</strong> there to confirm with Jai Restaurant.</p>
+          <button class="btn btn-dark" style="margin-top:22px;" id="bookAnotherBtn">Book another table</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="dark-section" id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Contact &amp; Location</div>
+      <h2>Come find us in Company Bagh</h2>
+      <p>Call ahead, message us on WhatsApp, or just walk in — we're easy to find in Company Bagh, Rohtak.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-cards reveal">
+        <div class="contact-card">
+          <div class="ic">📍</div>
+          <div>
+            <h4>Jai Restaurant</h4>
+            <p>Company Bagh, Rohtak, Haryana – 124001</p>
+            <div class="contact-card-actions">
+              <a class="btn btn-ghost" style="padding:9px 16px; font-size:0.82rem;" href="https://www.google.com/maps/search/?api=1&query=Jai+Restaurant+Company+Bagh+Rohtak+Haryana+124001" target="_blank" rel="noopener">Get Directions</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="ic">📞</div>
+          <div>
+            <h4>Phone</h4>
+            <p>+91 74042 93628</p>
+            <div class="contact-card-actions">
+              <a class="btn btn-ghost" style="padding:9px 16px; font-size:0.82rem;" href="tel:+917404293628">Call Now</a>
+              <a class="btn btn-ghost" style="padding:9px 16px; font-size:0.82rem;" href="https://wa.me/917404293628?text=Hello%20Jai%20Restaurant%2C%20I%20would%20like%20to%20make%20a%20table%20reservation." target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-card" style="flex-direction:column; align-items:stretch;">
+          <div style="display:flex; align-items:center; gap:16px;">
+            <div class="ic">🕒</div>
+            <h4>Opening Hours <span style="font-weight:400; color:rgba(247,241,230,0.45); font-size:0.78rem;">(placeholder — to confirm)</span></h4>
+          </div>
+          <div class="hours-table">
+            <div><span>Mon – Fri</span><span>11:00 AM – 10:30 PM</span></div>
+            <div><span>Sat – Sun</span><span>11:00 AM – 11:00 PM</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-embed reveal">
+        <iframe
+          title="Jai Restaurant location map"
+          src="https://www.google.com/maps?q=Company+Bagh,+Rohtak,+Haryana+124001&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="brand"><span class="mark">JR</span>Jai Restaurant</a>
+        <p>Delicious food and memorable moments, served in the heart of Rohtak.</p>
+        <div class="social-row" aria-label="Social media (to be added)">
+          <a href="#" aria-label="Instagram (placeholder)">IG</a>
+          <a href="#" aria-label="Facebook (placeholder)">FB</a>
+        </div>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#booking">Table Booking</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Menu</h5>
+        <ul>
+          <li><a href="#menu">Starters</a></li>
+          <li><a href="#menu">Main Course</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:+917404293628">+91 74042 93628</a></li>
+          <li><a href="https://wa.me/917404293628" target="_blank" rel="noopener">WhatsApp Us</a></li>
+          <li><a href="#contact">Company Bagh, Rohtak, Haryana – 124001</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom wrap" style="padding-left:0; padding-right:0;">
+      <span>© 2026 Jai Restaurant. All Rights Reserved.</span>
+      <span>Company Bagh, Rohtak, Haryana – 124001</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ WHATSAPP FLOAT ============ -->
+<a class="wa-float" id="waFloat" href="https://wa.me/917404293628?text=Hello%20Jai%20Restaurant%2C%20I%20would%20like%20to%20make%20a%20table%20reservation." target="_blank" rel="noopener" aria-label="Chat with Jai Restaurant on WhatsApp">💬</a>
+
+<!-- ============ SUPABASE (client) ============ -->
+<script type="module">
+  // ------------------------------------------------------------------
+  // Supabase configuration
+  // Replace these with YOUR project's URL and PUBLIC anon key.
+  // The anon key is safe to expose in frontend code as long as Row
+  // Level Security (see supabase-schema.sql) is enabled — never put
+  // a service_role key here.
+  // ------------------------------------------------------------------
+  const SUPABASE_URL = "https://YOUR-PROJECT-REF.supabase.co";
+  const SUPABASE_ANON_KEY = "YOUR-PUBLIC-ANON-KEY";
+
+  let supabase = null;
+  try {
+    const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2');
+    if (!SUPABASE_URL.includes("YOUR-PROJECT-REF")) {
+      supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    }
+  } catch (e) {
+    console.warn("Supabase client not loaded:", e);
+  }
+  window.__supabase = supabase;
+</script>
+
+<script>
+  // ============ Mobile nav ============
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }));
+
+  // ============ Scroll reveal ============
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  // ============ Menu data (placeholder — clearly marked, easy to replace) ============
+  const MENU_ITEMS = [
+    { name: "Paneer Tikka", desc: "Chargrilled cottage cheese marinated in spiced yogurt.", price: "₹220", cat: "starters", veg: true, img: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?q=80&w=800&auto=format&fit=crop" },
+    { name: "Veg Seekh Kebab", desc: "Skewered mixed vegetable kebabs, smoky and spiced.", price: "₹190", cat: "starters", veg: true, img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=800&auto=format&fit=crop" },
+    { name: "Chicken 65", desc: "Crisp, spicy fried chicken bites, South-Indian style.", price: "₹260", cat: "starters", veg: false, img: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=800&auto=format&fit=crop" },
+    { name: "Tandoori Chicken (Half)", desc: "Classic clay-oven chicken, char-grilled to order.", price: "₹320", cat: "starters", veg: false, img: "https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=800&auto=format&fit=crop" },
+    { name: "Butter Chicken", desc: "Slow-cooked chicken in a rich tomato-butter gravy.", price: "₹340", cat: "main", veg: false, img: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?q=80&w=800&auto=format&fit=crop" },
+    { name: "Paneer Butter Masala", desc: "Cottage cheese simmered in a velvety tomato gravy.", price: "₹280", cat: "main", veg: true, img: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?q=80&w=800&auto=format&fit=crop" },
+    { name: "Dal Makhani", desc: "Black lentils, slow-simmered with butter and cream.", price: "₹220", cat: "main", veg: true, img: "https://images.unsplash.com/photo-1626777553635-be86b23e5e08?q=80&w=800&auto=format&fit=crop" },
+    { name: "Mutton Rogan Josh", desc: "Tender mutton in an aromatic Kashmiri-style curry.", price: "₹380", cat: "main", veg: false, img: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?q=80&w=800&auto=format&fit=crop" },
+    { name: "Veg Biryani", desc: "Fragrant basmati rice layered with garden vegetables.", price: "₹240", cat: "main", veg: true, img: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=800&auto=format&fit=crop" },
+  ];
+
+  const menuGrid = document.getElementById('menuGrid');
+  function renderMenu(filter) {
+    menuGrid.innerHTML = '';
+    MENU_ITEMS.filter(i => filter === 'all' || i.cat === filter).forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'menu-card';
+      card.innerHTML = `
+        <div class="thumb">
+          <img src="${item.img}" alt="${item.name}" loading="lazy" width="400" height="300" />
+          <div class="veg-dot ${item.veg ? 'veg' : 'nonveg'}" title="${item.veg ? 'Vegetarian' : 'Non-vegetarian'}"><i></i></div>
+          <div class="sample-flag">Sample item</div>
+        </div>
+        <div class="body">
+          <div class="row"><h3>${item.name}</h3><span class="price">${item.price}</span></div>
+          <p>${item.desc}</p>
+        </div>`;
+      menuGrid.appendChild(card);
+    });
+  }
+  renderMenu('all');
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderMenu(btn.dataset.filter);
+    });
+  });
+
+  // ============ Booking form ============
+  const form = document.getElementById('bookingForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const formStatus = document.getElementById('formStatus');
+  const confirmBox = document.getElementById('confirmBox');
+  const formWrap = document.getElementById('bookingFormWrap');
+  const notes = document.getElementById('notes');
+  const notesCount = document.getElementById('notesCount');
+
+  // Prevent past dates
+  const dateInput = document.getElementById('date');
+  const today = new Date().toISOString().split('T')[0];
+  dateInput.setAttribute('min', today);
+
+  notes.addEventListener('input', () => { notesCount.textContent = notes.value.length; });
+
+  function setFieldError(id, message) {
+    const field = document.getElementById(id).closest('.field');
+    field.classList.add('error');
+    if (message) document.getElementById('err-' + id).textContent = message;
+  }
+  function clearFieldError(id) {
+    document.getElementById(id).closest('.field').classList.remove('error');
+  }
+
+  function validateIndianPhone(value) {
+    const cleaned = value.replace(/[\s-]/g, '');
+    return /^(\+91)?[6-9]\d{9}$/.test(cleaned);
+  }
+  function validateEmail(value) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  }
+
+  function validateForm() {
+    let valid = true;
+    ['fullName','phone','email','date','time','guests'].forEach(clearFieldError);
+
+    const fullName = document.getElementById('fullName').value.trim();
+    if (fullName.length < 2) { setFieldError('fullName'); valid = false; }
+
+    const phone = document.getElementById('phone').value.trim();
+    if (!validateIndianPhone(phone)) { setFieldError('phone'); valid = false; }
+
+    const email = document.getElementById('email').value.trim();
+    if (email && !validateEmail(email)) { setFieldError('email'); valid = false; }
+
+    const dateVal = document.getElementById('date').value;
+    if (!dateVal || dateVal < today) { setFieldError('date'); valid = false; }
+
+    const timeVal = document.getElementById('time').value;
+    if (!timeVal) { setFieldError('time'); valid = false; }
+
+    const guests = parseInt(document.getElementById('guests').value, 10);
+    if (!guests || guests < 1) { setFieldError('guests'); valid = false; }
+
+    return valid;
+  }
+
+  function showStatus(message, isError) {
+    formStatus.textContent = message;
+    formStatus.classList.add('show');
+    formStatus.classList.toggle('error-status', !!isError);
+  }
+  function hideStatus() {
+    formStatus.classList.remove('show');
+  }
+
+  function buildWhatsAppUrl(data) {
+    const lines = [
+      "New Table Booking – Jai Restaurant",
+      "",
+      `Customer Name: ${data.fullName}`,
+      `Phone: ${data.phone}`,
+      `Date: ${data.date}`,
+      `Time: ${data.time}`,
+      `Guests: ${data.guests}`,
+      `Special Request: ${data.request || '—'}`,
+      "",
+      "Please confirm the reservation."
+    ];
+    const text = encodeURIComponent(lines.join('\n'));
+    return `https://wa.me/917404293628?text=${text}`;
+  }
+
+  let isSubmitting = false;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (isSubmitting) return;
+    hideStatus();
+
+    if (!validateForm()) {
+      showStatus('Please fix the highlighted fields before continuing.', true);
+      return;
+    }
+
+    isSubmitting = true;
+    submitBtn.classList.add('loading');
+    submitBtn.disabled = true;
+
+    const data = {
+      fullName: document.getElementById('fullName').value.trim(),
+      phone: document.getElementById('phone').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      date: document.getElementById('date').value,
+      time: document.getElementById('time').value,
+      guests: parseInt(document.getElementById('guests').value, 10),
+      request: document.getElementById('request').value.trim(),
+      notes: document.getElementById('notes').value.trim(),
+    };
+
+    try {
+      const supabase = window.__supabase;
+      if (supabase) {
+        const { error } = await supabase.from('table_bookings').insert([{
+          full_name: data.fullName,
+          phone: data.phone,
+          email: data.email || null,
+          booking_date: data.date,
+          booking_time: data.time,
+          guests: data.guests,
+          special_request: [data.request, data.notes].filter(Boolean).join(' — ') || null,
+          status: 'pending',
+        }]);
+        if (error) throw error;
+      } else {
+        // Supabase not configured in this preview — booking is not persisted.
+        console.warn('Supabase is not configured; skipping database insert.');
+      }
+
+      // Open WhatsApp with a pre-filled (not auto-sent) message
+      const waUrl = buildWhatsAppUrl(data);
+      window.open(waUrl, '_blank', 'noopener');
+
+      form.classList.add('confirmed');
+      confirmBox.classList.add('show');
+    } catch (err) {
+      console.error(err);
+      showStatus("Something went wrong saving your booking. Please try again, or contact us directly on WhatsApp.", true);
+    } finally {
+      isSubmitting = false;
+      submitBtn.classList.remove('loading');
+      submitBtn.disabled = false;
+    }
+  });
+
+  document.getElementById('bookAnotherBtn').addEventListener('click', () => {
+    form.reset();
+    form.classList.remove('confirmed');
+    confirmBox.classList.remove('show');
+    notesCount.textContent = '0';
+    hideStatus();
+  });
+</script>
+
+</body>
+</html>
